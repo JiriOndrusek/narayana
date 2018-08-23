@@ -618,6 +618,12 @@ function tx_bridge_tests {
 
 function tomcat_tests {
     echo "Initializing Narayana Tomcat tests"
+
+    # Disable the tomcat test on JDK9 until JBTM-2796 is resolved
+    if [ $JAVA_VERSION = "9.0.4" ]; then
+	    return
+    fi
+
     cd ${WORKSPACE}
     TOMCAT_VERSION=9.0.11
     wget -nc https://archive.apache.org/dist/tomcat/tomcat-9/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.zip
