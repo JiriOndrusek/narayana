@@ -74,6 +74,7 @@
                 <inherited>true</inherited>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.0-beta-1</version>
                 <executions>
                     <execution>
                         <id>enforce-property</id>
@@ -219,6 +220,16 @@
                             <excludes>
                                 <exclude>**</exclude>
                             </excludes>
+                            <forceCreation>true</forceCreation>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>jar-with-classifier</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
                             <classifier>${bpa}</classifier>
                             <forceCreation>true</forceCreation>
                         </configuration>
