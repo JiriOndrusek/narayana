@@ -310,11 +310,7 @@ function build_narayana {
   fi
   echo "Using MAVEN_OPTS: $MAVEN_OPTS"
   
-  if [ $JAVA_VERSION = "9.0.4" ]; then
-    MAVEN_OPTS="--add-modules java.xml.bind,java.xml.ws" ./build.sh -B -Prelease-9,community$OBJECT_STORE_PROFILE $ORBARG "$@" $NARAYANA_ARGS $IPV6_OPTS $CODE_COVERAGE_ARGS clean install
-  else
-    ./build.sh -B -Prelease,community$OBJECT_STORE_PROFILE $ORBARG "$@" $NARAYANA_ARGS $IPV6_OPTS $CODE_COVERAGE_ARGS clean install
-  fi
+  ./build.sh -B -Prelease,community$OBJECT_STORE_PROFILE $ORBARG "$@" $NARAYANA_ARGS $IPV6_OPTS $CODE_COVERAGE_ARGS clean install
 
   [ $? = 0 ] || fatal "narayana build failed"
 
