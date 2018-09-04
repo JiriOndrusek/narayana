@@ -419,7 +419,7 @@
     </jvm.args.byteman>
     <jvm.args.jacoco>-javaagent:${project.build.directory}/lib/jacocoagent.jar=destfile=${project.build.directory}/coverage-reports/jacoco-ut.exec,includes=*,append=true,output=file</jvm.args.jacoco>
     <!-- the need for -XX:MaxPermSize= was dropped as of Java SE 8 -->
-    <!-- j9 TODO -XX:ParallelGCThreads=2 is no not available in Java SE 9 -->
+    <!-- -XX:ParallelGCThreads=2 is no not available in Java SE 9 -->
     <jvm.args.memory>-Xms64m -Xmx1024m</jvm.args.memory>
     <jvm.args.debug></jvm.args.debug>
     <jvm.args.other>-server</jvm.args.other>
